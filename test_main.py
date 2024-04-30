@@ -64,7 +64,7 @@ def load_model_and_tokenizer(model_name, model_path):
 									device_map="auto")
 		llm = pipeline
 	elif model_name == 'dolly':
-		from instruct_pipeline import InstructionTextGenerationPipeline
+		from tools.instruct_pipeline import InstructionTextGenerationPipeline
 		tokenizer = AutoTokenizer.from_pretrained(model_path, padding_side="left")
 		llm_pre = AutoModelForCausalLM.from_pretrained(model_path, device_map='auto', torch_dtype=torch.bfloat16)
 		llm_pre = llm_pre.eval()
