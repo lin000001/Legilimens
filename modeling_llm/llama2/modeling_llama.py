@@ -98,26 +98,6 @@ def _make_causal_mask(
 		input_ids_shape=input_ids_shape, dtype=dtype, device=device, past_key_values_length=past_key_values_length
 	)
 
-import torch.nn as nn
-import torch.nn.functional as F
-class ThreeLayerClassifier(nn.Module):  
-	def __init__(self, dim):
-		super(ThreeLayerClassifier, self).__init__()
-		self.fc1 = nn.Linear(dim , 1024)
-		self.fc2 = nn.Linear(1024 , 512)
-		self.fc3 = nn.Linear(512 , 2)
-		self.dropout = nn.Dropout(0.7)
-
-	def forward(self, x):
-		x = F.relu(self.fc1(x))
-		x = self.dropout(x)
-		x = F.relu(self.fc2(x))
-		x = self.dropout(x)
-		x = self.fc3(x)
-
-		return x
-
-
 
 class LlamaRMSNorm(nn.Module):
 	def __init__(self, hidden_size, eps=1e-6):

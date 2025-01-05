@@ -1,0 +1,8 @@
+**/*.pt
+**/*.csv
+**/*.json
+**/*.jsonl
+**/*.log
+**/*.png
+/wandb/*
+/baseline/result/*
