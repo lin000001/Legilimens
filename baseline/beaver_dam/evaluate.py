@@ -176,7 +176,7 @@ def parse_arguments():
 		'--model_path',
 		type=str,
 		# required=True,
-		default= '/mnt/home/wujialin/llm/pretrained_model/beaver-dam-7b',
+		default= './pretrained_model/beaver-dam-7b',
 		help='Path to the model.',
 	)
 	parser.add_argument(
