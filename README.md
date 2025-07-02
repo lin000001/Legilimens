@@ -3,25 +3,6 @@
 ## Introduction
 This is the official code for "[Legilimens: Practical and Unified Content Moderation for Large Language Model Services](https://arxiv.org/pdf/2408.15488)" (Accepted by ACM CCS 2024).
 
-
-### Note:
-#### Accessing `hidden_states` with `hidden_states=True` in `transformers`
-
-You can also use the `hidden_states=True` argument to obtain the hidden states from models in the `transformers` package. This feature is useful for gaining insights into the internal workings of models, such as `LLaMA`, `BERT`, `GPT`, etc.
-
-#### For example:
-```python
-from transformers import AutoTokenizer, AutoModelForCausalLM
-import torch
-
-# Load model and tokenizer
-model_name = "meta-llama/Llama-2-7b-hf"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name, output_hidden_states=True)
-```
-
-
-
 ## Preperation
 
 You can build the required environment by running:
