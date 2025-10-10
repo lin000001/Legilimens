@@ -15,6 +15,42 @@ pip install -r requirements.txt
 Put dataset in ``./datasets``.
 
 Put pre-trained moderator in ``./models_IO_moderation``.
+
+
+
+## How to Train Legilimens
+
+**Simple but effective**: Legilimens does not fine-tune the LLM. Instead, it treats the LLM as a frozen feature extractor — leveraging its hidden states during inference — and trains a lightweight MLP classifier on top.
+
+The moderator architecture is a straightforward 3-layer neural network:
+
+```python
+class ThreeLayerClassifier(nn.Module):  
+    def __init__(self, dim):
+        super(ThreeLayerClassifier, self).__init__()
+        self.fc1 = nn.Linear(dim, 1024)
+        self.fc2 = nn.Linear(1024, 512)
+        self.fc3 = nn.Linear(512, 2)  # Binary output: harmful vs. benign
+        self.dropout = nn.Dropout(0.7)
+
+    def forward(self, x):
+        x = F.relu(self.fc1(x))
+        x = self.dropout(x)
+        x = F.relu(self.fc2(x))
+        x = self.dropout(x)
+        x = self.fc3(x)
+        return x
+```
+
+Training is standard binary classification: extract features from LLM hidden states, assign labels based on safety, and train the classifier using cross-entropy loss.  
+
+To train:
+
+1. Prepare datasets (e.g., BeaverTail) in `./datasets`.  
+2. Extract hidden states from target LLMs using our modified modeling code.  
+3. Label samples based on response harmfulness.  
+4. Train...
+
 ## Usage
 The whole project contains three tasks: 
 + I-moderation.
