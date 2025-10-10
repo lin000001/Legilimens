@@ -47,7 +47,7 @@ Training is standard binary classification: extract features from LLM hidden sta
 To train:
 
 1. Prepare datasets (e.g., BeaverTail) in `./datasets`.  
-2. Extract hidden states from target LLMs using our modified modeling code.  
+2. Extract hidden states from target LLMs.  
 3. Label samples based on response harmfulness.  
 4. Train...
 
