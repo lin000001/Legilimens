@@ -48,7 +48,7 @@ To train:
 
 1. Prepare datasets (e.g., BeaverTail) in `./datasets`.  
 2. Extract hidden states from target LLMs.  
-3. Label samples based on response harmfulness.  
+3. Label samples based on (prompt/response/prompt-response) harmfulness.  
 4. Train...
 
 ## Usage
