@@ -1,7 +1,19 @@
 # Legilimens
 
 ## Introduction
-This is the official code for "[Legilimens: Practical and Unified Content Moderation for Large Language Model Services](https://arxiv.org/pdf/2408.15488)" (Accepted by ACM CCS 2024).
+This is the official code for **[Legilimens: Practical and Unified Content Moderation for Large Language Model Services](https://arxiv.org/pdf/2408.15488)**.
+
+<p align="center">
+  <a href="https://arxiv.org/pdf/2408.15488">
+    <img src="https://img.shields.io/badge/📖_Paper-arXiv-red?style=flat-square" alt="Paper">
+  </a>
+  <a href="https://lin000001.github.io/Legilimens.github.io/">
+    <img src="https://img.shields.io/badge/🌐_Project_Page-blue?style=flat-square" alt="Project Page">
+  </a>
+  <a href="https://www.acm.org/conferences">
+    <img src="https://img.shields.io/badge/🗓️_Conference-ACM%20CCS%202024-brightgreen?style=flat-square" alt="Conference">
+  </a>
+</p>
 
 ## Preperation
 
